@@ -2,7 +2,7 @@ package com.forttiori.planetsfilter.Service;
 
 
 import com.forttiori.planetsfilter.Client.PlanetsClient;
-import com.forttiori.planetsfilter.Exceptions.PageNotFoundExcepetion;
+import com.forttiori.planetsfilter.Exceptions.PageNotFoundException;
 import com.forttiori.planetsfilter.Exceptions.PlanetNotFoundException;
 import com.forttiori.planetsfilter.Response.PlanetInfoResponse;
 import com.forttiori.planetsfilter.Response.ResultResponse;
@@ -19,7 +19,7 @@ public class PlanetsService {
         try {
             return planetsClient.getAllPlanets(page);
         }catch (RuntimeException e){
-            throw new PageNotFoundExcepetion("Pagina não encontrada!");
+            throw new PageNotFoundException("Pagina não encontrada!");
         }
     }
 
